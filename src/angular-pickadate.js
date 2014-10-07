@@ -85,6 +85,7 @@
         require: 'ngModel',
         scope: {
           date: '=ngModel',
+          onSetDate:'&',
           defaultDate: '=',
           minDate: '=',
           maxDate: '=',
@@ -174,6 +175,7 @@
           scope.setDate = function(dateObj) {
             if (isDateDisabled(dateObj)) return;
             ngModel.$setViewValue(dateObj.date);
+            scope.onSetDate()(dateObj);
           };
 
           ngModel.$render = function () {
