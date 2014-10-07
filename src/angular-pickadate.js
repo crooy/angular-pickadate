@@ -158,6 +158,8 @@
                 className = 'pickadate-disabled';
               } else if (indexOf.call(disabledDates, date) >= 0) {
                 className = 'pickadate-disabled pickadate-unavailable';
+              } else if (indexOf.call(disabledDates, dateObj.getDay()) >= 0){
+                className = 'pickadate-disabled pickadate-unavailable';
               } else {
                 className = 'pickadate-enabled';
               }
